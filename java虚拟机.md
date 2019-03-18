@@ -1,13 +1,139 @@
 #### 模块一 基本原理
-+ Java代码是怎么运行的？
-+ Java的基本类型
-JVM是如何加载Java类的？
-JVM是如何执行方法调用的？
-JVM是如何处理异常的？
-JVM是如何实现反射的？
-Java 8的Lambda表达式是怎么运行的？
-JVM构造对象的步骤都有哪些？
-什么是垃圾收集？
-JVM是如何实现同步的？
-Java内存模型是什么？
-JVM的安全点是什么？
+- Java代码是怎么运行的？
+  - Java虚拟机的意义
+  - Java字节码
+  - Java虚拟机的运行效率
+- Java的基本类型
+  - Java虚拟机的boolean类型
+  - Java的基本类型
+  - Java基本类型的大小
+- JVM是如何加载Java类的？
+  - 加载
+  - 链接
+  - 初始化
+- JVM是如何执行方法调用的？
+  - 重写与重载
+  - 静态绑定与动态绑定
+  - 调用指令的符号引用
+  - 虚方法调用
+  - 方法表
+  - 内联缓存方法表
+  - 内联缓存
+- JVM是如何处理异常的？
+  - 异常的基本概念
+  - JVM的异常捕获机制
+  - Java 7的Supressed异常以及语法糖
+- JVM是如何实现反射的？
+  - 反射API简介
+  - 反射调用的实现
+  - 反射调用的性能开销
+- Java 8的Lambda表达式是怎么运行的？
+  - 动态语言与Lambda
+  - invokedynamic指令和method handle
+  - invokedynamic指令的运行效率
+- JVM构造对象的步骤都有哪些？
+  - 构造对象的步骤
+  - new指令的实现
+  - JVM堆的区域划分
+- 什么是垃圾收集？
+  - 自动内存管理的意义
+  - 垃圾收集算法
+  - 如何选择垃圾收集算法
+- JVM是如何实现同步的？
+  - synchronized关键字的实现
+  - JVM的锁算法
+  - concurrent核心库
+- Java内存模型是什么？
+  - 多处理器架构下的内存读写
+  - happens-before原则
+  - volatile关键字
+  - 对象的安全发布
+- JVM的安全点是什么？
+  - 安全点的概念
+  - 安全点的位置
+  - JVM何时使用安全点
+#### 模块二 高效实现
+- javac是如何编译Java源代码的？
+  - 自动装箱与自动拆箱
+  - 变长参数
+  - foreach循环
+  - 范型与类型擦除
+  - 桥接方法
+- 如何使用注解解释器？
+  - 注解和元数据
+  - Java核心类库中的标准注解
+  - 自定义注解
+- 解释器如何触发即时编译？
+  - 即时编译简介
+  - 触发即时编译的时机
+  - 生成代码的性能
+- 即时编译器与常规的静态编译器有哪些不同？
+  - profiling
+  - 基于程序profile的优化方式
+  - 去优化
+- 即时编译器有哪些优化？
+  - 强度削弱
+- 在什么情况下重复读写操作会被优化？
+  - 读写删除优化
+- 在什么情况下循环代码会被优化？
+  - 循环展开
+  - 其他循环优化
+  - OSR编译
+- 在什么情况下对象分配会被优化？
+  - 逃逸分析
+  - 栈分配
+  - 标量替换
+- 在什么情况下方法调用会被内联？
+  - 方法内联的概念
+  - 完全去虚化
+  - 条件去虚化
+- 什么是intrinsics，为什么它们非常高效？
+  - JVM中intrinsics的概念
+  - intrinsics的性能
+- 如何写出适用向量化计算的代码？
+  - SIMD指令集
+  - JVM的自动向量化优化
+  - 如何写出适用向量化的代码
+#### 模块三 代码优化
+- 如何理解JVM内置的编译或GC日志？
+  - 编译日志
+  - GC日志
+  - 去优化日志
+- 如何利用JFR和JMC监控Java程序？
+  - Java Flight Recorder简介
+  - Java Mission Control简介
+- 如何利用MAT分析Java程序的堆使用状况？
+  - 内存泄漏
+  - Eclipse MAT内存分析工具
+- 如何利用JMH评估代码性能？
+  - JMH的意义
+  - JMH的应用
+- 如何在Java代码中与C++代码交互？
+  - Java Native Interface简介
+  - Native方法与链接
+  - 在C++代码中调用Java方法
+  - Java Native Access简介
+- 如何利用JVMYI监听JVM事件？
+  - JVM Tool Interface简介
+  - 舰艇JVM事件
+- 如何利用字节码注入为已有代码加加料？
+  - 字节码注入工具
+  - Java agent与C agent
+  - 面向方面的编程方式
+- 如何利用Unsafe API绕开JVM的控制？
+  - Unsafe API简介
+  - Unsafe的风险
+#### 模块四 黑科技
+- Graal：用Java编译Java
+  - Graal与JVM的交互
+  - Graal与C2的区别
+  - Graal的实现
+- Truffle：用Java编译其他语言
+  - Partial Evaluator
+  - 抽象语法树及其解释器
+  - 同时使用多种语言的Polyglot
+- SubstrateVM：用Java编译虚拟机
+  - AOT编译
+  - SubstrateVM的实现与局限
+  - SubstrateVM的应用场景
+- Metropolis：Java-on-Java的展望
